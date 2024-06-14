@@ -1,23 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtbexj4qpx2e3"]
+[gd_scene load_steps=11 format=3 uid="uid://dtbexj4qpx2e3"]
 
 [ext_resource type="PackedScene" uid="uid://c8bxfhkrp87wj" path="res://player.tscn" id="1_1x47m"]
-[ext_resource type="Texture2D" uid="uid://bqtdjjgotwpp7" path="res://icon.svg" id="2_k5r21"]
+[ext_resource type="Texture2D" uid="uid://dgo0l3moh5ykq" path="res://undegrond.png" id="3_cf652"]
+[ext_resource type="Texture2D" uid="uid://bpxyndb6rkyoh" path="res://ground.png" id="3_g1fq2"]
+[ext_resource type="Script" path="res://camera.gd" id="4_af2nl"]
+[ext_resource type="Texture2D" uid="uid://bc7gd4ng6ttih" path="res://background.png" id="5_6cc2i"]
+[ext_resource type="Texture2D" uid="uid://bt4v0xqtty5ck" path="res://cloud.png" id="6_vpld3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsnq6"]
-size = Vector2(249, 27)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eebor"]
+texture = ExtResource("3_g1fq2")
+texture_region_size = Vector2i(10, 10)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.0321, -9.94369, 10.0321, -10.0321, 9.98788, 9.98788, -10, 10)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4kfvc"]
+texture = ExtResource("3_cf652")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_v3tqo"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_eebor")
+sources/3 = SubResource("TileSetAtlasSource_4kfvc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjbdu"]
+size = Vector2(20, 87)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_1x47m")]
-position = Vector2(33, -27)
+position = Vector2(49, 79)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_v3tqo")
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 1, 0, 458770, 1, 0, 458771, 1, 0, 524287, 1, 0, 524286, 1, 0, 524285, 1, 0, 524284, 1, 0, 524283, 1, 0, 524282, 1, 0, 589818, 3, 0, 589819, 3, 0, 589820, 3, 0, 589821, 3, 0, 589822, 3, 0, 589823, 3, 0, 589817, 3, 0, 524288, 3, 0, 524289, 3, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 3, 0, 524303, 3, 0, 524304, 3, 0, 524305, 3, 0, 524306, 3, 0, 524307, 3, 0, 589843, 3, 0, 589842, 3, 0, 589841, 3, 0, 589840, 3, 0, 589839, 3, 0, 589838, 3, 0, 589837, 3, 0, 589836, 3, 0, 589835, 3, 0, 589834, 3, 0, 589833, 3, 0, 589832, 3, 0, 589831, 3, 0, 589830, 3, 0, 589829, 3, 0, 589828, 3, 0, 589827, 3, 0, 589826, 3, 0, 589825, 3, 0, 589824, 3, 0, 655359, 3, 0, 655358, 3, 0, 655357, 3, 0, 655356, 3, 0, 655355, 3, 0, 655354, 3, 0, 655353, 3, 0, 524281, 1, 0, 458772, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 1, 0, 458779, 1, 0, 524308, 3, 0, 524309, 3, 0, 524310, 3, 0, 524311, 3, 0, 589847, 3, 0, 589846, 3, 0, 589845, 3, 0, 589844, 3, 0, 524315, 3, 0, 589851, 3, 0, 589852, 3, 0, 524316, 3, 0, 524317, 3, 0, 589853, 3, 0, 458780, 1, 0, 458781, 1, 0, 458778, 1, 0, 524314, 3, 0, 589850, 3, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(155.5, 119)
-scale = Vector2(1.91406, 0.21875)
-texture = ExtResource("2_k5r21")
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+offset = Vector2(0, 80)
+zoom = Vector2(6, 6)
+script = ExtResource("4_af2nl")
+player = NodePath("../Player")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(154.5, 119)
-shape = SubResource("RectangleShape2D_gsnq6")
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+z_index = -100
+position = Vector2(1.99999, 80)
+scale = Vector2(1.29167, 1)
+texture = ExtResource("5_6cc2i")
+
+[node name="staticbody2d" type="StaticBody2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/staticbody2d"]
+position = Vector2(-106, 72)
+shape = SubResource("RectangleShape2D_mjbdu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(159, 43)
+texture = ExtResource("6_vpld3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(259, -1)
+texture = ExtResource("6_vpld3")
