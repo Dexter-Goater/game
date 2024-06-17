@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://cn72fwo6srbg3"]
+
+[ext_resource type="Texture2D" uid="uid://dxjsie3kf5qjx" path="res://idle.png" id="1_drm06"]
+[ext_resource type="Texture2D" path="res://ground.png" id="2_7qsfb"]
+[ext_resource type="Texture2D" uid="uid://dgo0l3moh5ykq" path="res://undegrond.png" id="3_usxm3"]
+[ext_resource type="Texture2D" uid="uid://082lu4ymer17" path="res://house.png" id="4_lh0q8"]
+[ext_resource type="Texture2D" uid="uid://vie8802k55ky" path="res://alien ship.png" id="5_0nm8p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6hm3"]
+atlas = ExtResource("1_drm06")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yc11"]
+atlas = ExtResource("1_drm06")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkk40"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6hm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yc11")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42cxa"]
+texture = ExtResource("2_7qsfb")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kroc2"]
+texture = ExtResource("3_usxm3")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_oio1w"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_42cxa")
+sources/1 = SubResource("TileSetAtlasSource_kroc2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiatv"]
+atlas = ExtResource("5_0nm8p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucbg6"]
+atlas = ExtResource("5_0nm8p")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlkmu"]
+atlas = ExtResource("5_0nm8p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxlxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiatv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucbg6")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlkmu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="cutscene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+
+[node name="empty player" type="AnimatedSprite2D" parent="."]
+position = Vector2(-89, 8)
+sprite_frames = SubResource("SpriteFrames_rkk40")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_oio1w")
+format = 2
+layer_0/tile_data = PackedInt32Array(131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 196603, 1, 0, 196602, 1, 0, 65541, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 262138, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0)
+
+[node name="empty house" type="Sprite2D" parent="."]
+position = Vector2(78, -5)
+scale = Vector2(1.21875, 1.40625)
+texture = ExtResource("4_lh0q8")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(43, 3)
+sprite_frames = SubResource("SpriteFrames_cxlxh")
+animation = &"idle"
+frame_progress = 0.174247
