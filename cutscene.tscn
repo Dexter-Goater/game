@@ -1,10 +1,207 @@
-[gd_scene load_steps=16 format=3 uid="uid://cn72fwo6srbg3"]
+[gd_scene load_steps=31 format=3 uid="uid://cn72fwo6srbg3"]
 
 [ext_resource type="Texture2D" uid="uid://dxjsie3kf5qjx" path="res://idle.png" id="1_drm06"]
-[ext_resource type="Texture2D" path="res://ground.png" id="2_7qsfb"]
+[ext_resource type="Script" path="res://cutscene.gd" id="1_hnexh"]
+[ext_resource type="Texture2D" uid="uid://bpxyndb6rkyoh" path="res://ground.png" id="2_7qsfb"]
 [ext_resource type="Texture2D" uid="uid://dgo0l3moh5ykq" path="res://undegrond.png" id="3_usxm3"]
 [ext_resource type="Texture2D" uid="uid://082lu4ymer17" path="res://house.png" id="4_lh0q8"]
 [ext_resource type="Texture2D" uid="uid://vie8802k55ky" path="res://alien ship.png" id="5_0nm8p"]
+[ext_resource type="Texture2D" uid="uid://bc7gd4ng6ttih" path="res://background.png" id="6_0ge2a"]
+[ext_resource type="Texture2D" uid="uid://cr1jqyubwyaum" path="res://strelka.png" id="7_ouvi7"]
+[ext_resource type="Texture2D" uid="uid://bhvgdtqq6denm" path="res://enemy.png" id="8_vtlpr"]
+
+[sub_resource type="Animation" id="Animation_gsq1r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("empty player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-89, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("empty strelka:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(54, 11)]
+}
+
+[sub_resource type="Animation" id="Animation_u3xoj"]
+resource_name = "cutscene_1"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("empty player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(7, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89, 8), Vector2(-23, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("empty strelka:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.8, 4.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(51, 11), Vector2(23, 11)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ship:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.0001),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-23, -72), Vector2(-23, 0), Vector2(-23, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ship:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"fly", &"idle"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("alien:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.2, 2.1, 2.2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-23, 4), Vector2(23, 4), Vector2(22, 7), Vector2(22, 13)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ship2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.6, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(26, -75), Vector2(26, 3), Vector2(26, -74)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("alien:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("alien:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.1, 2.2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.7), Vector2(1, 0.23)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ship2:animation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.6, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"fly", &"idle", &"fly"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("alien2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.8, 3.8, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(22, 4), Vector2(51, 4), Vector2(22, 4)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("alien2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.8, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("empty strelka:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("empty player:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5etgy"]
+_data = {
+"RESET": SubResource("Animation_gsq1r"),
+"cutscene_1": SubResource("Animation_u3xoj")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6hm3"]
 atlas = ExtResource("1_drm06")
@@ -79,7 +276,70 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_503yu"]
+atlas = ExtResource("8_vtlpr")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2cmg"]
+atlas = ExtResource("8_vtlpr")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qryu"]
+atlas = ExtResource("8_vtlpr")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7j6g"]
+atlas = ExtResource("8_vtlpr")
+region = Rect2(0, 25, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l4fu"]
+atlas = ExtResource("8_vtlpr")
+region = Rect2(16, 25, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf4wl"]
+atlas = ExtResource("8_vtlpr")
+region = Rect2(32, 25, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsg3b"]
+atlas = ExtResource("8_vtlpr")
+region = Rect2(0, 50, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gl82v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_503yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2cmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qryu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7j6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l4fu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf4wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsg3b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="cutscene" type="Node2D"]
+script = ExtResource("1_hnexh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5etgy")
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)
@@ -96,12 +356,44 @@ format = 2
 layer_0/tile_data = PackedInt32Array(131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 196603, 1, 0, 196602, 1, 0, 65541, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 262138, 1, 0, 262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0)
 
 [node name="empty house" type="Sprite2D" parent="."]
-position = Vector2(78, -5)
+position = Vector2(77, -5)
 scale = Vector2(1.21875, 1.40625)
 texture = ExtResource("4_lh0q8")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(43, 3)
+[node name="ship" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(-23, 3)
 sprite_frames = SubResource("SpriteFrames_cxlxh")
 animation = &"idle"
-frame_progress = 0.174247
+
+[node name="back" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(0, -2)
+texture = ExtResource("6_0ge2a")
+
+[node name="empty strelka" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(54, 11)
+texture = ExtResource("7_ouvi7")
+flip_h = true
+
+[node name="alien" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(22, 13)
+scale = Vector2(1, 0.23)
+sprite_frames = SubResource("SpriteFrames_gl82v")
+frame_progress = 0.150351
+
+[node name="alien2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(22, 4)
+sprite_frames = SubResource("SpriteFrames_gl82v")
+frame_progress = 0.150351
+
+[node name="ship2" type="AnimatedSprite2D" parent="."]
+z_index = -2
+position = Vector2(26, -74)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_cxlxh")
+animation = &"idle"
