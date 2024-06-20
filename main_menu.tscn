@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq4gedclkx60y"]
+
+[ext_resource type="Texture2D" uid="uid://bc7gd4ng6ttih" path="res://background.png" id="1_7cxke"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_k0pfp"]
+[ext_resource type="FontFile" uid="uid://bxwefrt2enxmh" path="res://font.ttf" id="2_t68sc"]
+
+[sub_resource type="Theme" id="Theme_ebktg"]
+default_font = ExtResource("2_t68sc")
+default_font_size = 8
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_k0pfp")
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -100
+scale = Vector2(1.29167, 1)
+texture = ExtResource("1_7cxke")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_ebktg")
+
+[node name="title" type="Label" parent="Control"]
+texture_filter = 1
+offset_left = -56.0
+offset_top = -45.0
+offset_right = 56.0
+offset_bottom = -22.0
+text = "saving strelka"
+
+[node name="play" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.319
+anchor_top = 0.379
+anchor_right = 3.319
+anchor_bottom = 0.379
+offset_left = -151.76
+offset_top = -35.16
+offset_right = -111.76
+offset_bottom = -18.16
+text = "play"
+flat = true
+
+[node name="settings" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -34.0
+offset_top = 3.0
+offset_right = 38.0
+offset_bottom = 20.0
+text = "settings"
+flat = true
+
+[node name="quit" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = 25.0
+offset_right = 19.0
+offset_bottom = 42.0
+text = "quit"
+flat = true
+
+[connection signal="pressed" from="Control/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/quit" to="." method="_on_quit_pressed"]

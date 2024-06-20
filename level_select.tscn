@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmflfwfft5m67"]
+
+[ext_resource type="Script" path="res://level_select.gd" id="1_n16e7"]
+[ext_resource type="Texture2D" uid="uid://bc7gd4ng6ttih" path="res://background.png" id="1_qcbfs"]
+[ext_resource type="Texture2D" uid="uid://d307fuv3ok66t" path="res://earth.png" id="2_gau4e"]
+[ext_resource type="FontFile" uid="uid://bxwefrt2enxmh" path="res://font.ttf" id="4_4rcc1"]
+
+[sub_resource type="Theme" id="Theme_jexiq"]
+default_font = ExtResource("4_4rcc1")
+default_font_size = 8
+
+[node name="level select" type="Node2D"]
+script = ExtResource("1_n16e7")
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(13, 0)
+scale = Vector2(1.29167, 1)
+texture = ExtResource("1_qcbfs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_jexiq")
+
+[node name="level_1" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -29.0
+offset_right = -79.0
+offset_bottom = -20.0
+text = "1"
+
+[node name="Button" type="Button" parent="Control"]
+offset_left = -95.0
+offset_top = -51.0
+offset_right = -69.0
+offset_bottom = -25.0
+icon = ExtResource("2_gau4e")
+flat = true
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
