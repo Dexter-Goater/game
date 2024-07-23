@@ -1,16 +1,16 @@
 [gd_scene load_steps=37 format=3 uid="uid://cn72fwo6srbg3"]
 
-[ext_resource type="Script" path="res://cutscene.gd" id="1_5pew1"]
-[ext_resource type="Texture2D" uid="uid://dxjsie3kf5qjx" path="res://idle.png" id="2_cb1xk"]
-[ext_resource type="Texture2D" uid="uid://c0vn3fpnqq1qc" path="res://running animation.png" id="3_lsgv1"]
-[ext_resource type="Texture2D" uid="uid://bpxyndb6rkyoh" path="res://ground.png" id="4_0g7h3"]
-[ext_resource type="Texture2D" uid="uid://dgo0l3moh5ykq" path="res://undegrond.png" id="5_dxr6d"]
-[ext_resource type="Texture2D" uid="uid://082lu4ymer17" path="res://house.png" id="6_4hd5n"]
-[ext_resource type="Texture2D" uid="uid://vie8802k55ky" path="res://alien ship.png" id="7_cony2"]
-[ext_resource type="Texture2D" uid="uid://bc7gd4ng6ttih" path="res://background.png" id="8_sm4ko"]
-[ext_resource type="Texture2D" uid="uid://cr1jqyubwyaum" path="res://strelka.png" id="9_s6d6h"]
-[ext_resource type="Texture2D" uid="uid://bhvgdtqq6denm" path="res://enemy.png" id="10_p2hl7"]
-[ext_resource type="Texture2D" uid="uid://b6oiv51ma3x7h" path="res://!.png" id="11_4m84f"]
+[ext_resource type="Script" path="res://cutscene.gd" id="1_nyde7"]
+[ext_resource type="Texture2D" uid="uid://dxjsie3kf5qjx" path="res://idle.png" id="2_b425t"]
+[ext_resource type="Texture2D" uid="uid://c0vn3fpnqq1qc" path="res://running animation.png" id="3_yltr0"]
+[ext_resource type="Texture2D" uid="uid://bpxyndb6rkyoh" path="res://ground.png" id="4_yf1o8"]
+[ext_resource type="Texture2D" uid="uid://dgo0l3moh5ykq" path="res://undegrond.png" id="5_ojgii"]
+[ext_resource type="Texture2D" uid="uid://082lu4ymer17" path="res://house.png" id="6_kyaiy"]
+[ext_resource type="Texture2D" uid="uid://vie8802k55ky" path="res://alien ship.png" id="7_bi80b"]
+[ext_resource type="Texture2D" uid="uid://bc7gd4ng6ttih" path="res://background.png" id="8_g0cjt"]
+[ext_resource type="Texture2D" uid="uid://cr1jqyubwyaum" path="res://strelka.png" id="9_nrcrt"]
+[ext_resource type="Texture2D" uid="uid://bhvgdtqq6denm" path="res://enemy.png" id="10_48oyf"]
+[ext_resource type="Texture2D" uid="uid://b6oiv51ma3x7h" path="res://!.png" id="11_v3wkm"]
 
 [sub_resource type="Animation" id="Animation_gsq1r"]
 length = 0.001
@@ -230,27 +230,27 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6hm3"]
-atlas = ExtResource("2_cb1xk")
+atlas = ExtResource("2_b425t")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0yc11"]
-atlas = ExtResource("2_cb1xk")
+atlas = ExtResource("2_b425t")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbx6w"]
-atlas = ExtResource("3_lsgv1")
+atlas = ExtResource("3_yltr0")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ji3uh"]
-atlas = ExtResource("3_lsgv1")
+atlas = ExtResource("3_yltr0")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kaen5"]
-atlas = ExtResource("3_lsgv1")
+atlas = ExtResource("3_yltr0")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0n2sh"]
-atlas = ExtResource("3_lsgv1")
+atlas = ExtResource("3_yltr0")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rkk40"]
@@ -285,13 +285,13 @@ animations = [{
 }]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42cxa"]
-texture = ExtResource("4_0g7h3")
+texture = ExtResource("4_yf1o8")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kroc2"]
-texture = ExtResource("5_dxr6d")
+texture = ExtResource("5_ojgii")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -302,15 +302,15 @@ sources/0 = SubResource("TileSetAtlasSource_42cxa")
 sources/1 = SubResource("TileSetAtlasSource_kroc2")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qiatv"]
-atlas = ExtResource("7_cony2")
+atlas = ExtResource("7_bi80b")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ucbg6"]
-atlas = ExtResource("7_cony2")
+atlas = ExtResource("7_bi80b")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mlkmu"]
-atlas = ExtResource("7_cony2")
+atlas = ExtResource("7_bi80b")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cxlxh"]
@@ -336,31 +336,31 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_503yu"]
-atlas = ExtResource("10_p2hl7")
+atlas = ExtResource("10_48oyf")
 region = Rect2(0, 0, 16, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2cmg"]
-atlas = ExtResource("10_p2hl7")
+atlas = ExtResource("10_48oyf")
 region = Rect2(16, 0, 16, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4qryu"]
-atlas = ExtResource("10_p2hl7")
+atlas = ExtResource("10_48oyf")
 region = Rect2(32, 0, 16, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w7j6g"]
-atlas = ExtResource("10_p2hl7")
+atlas = ExtResource("10_48oyf")
 region = Rect2(0, 25, 16, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6l4fu"]
-atlas = ExtResource("10_p2hl7")
+atlas = ExtResource("10_48oyf")
 region = Rect2(16, 25, 16, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gf4wl"]
-atlas = ExtResource("10_p2hl7")
+atlas = ExtResource("10_48oyf")
 region = Rect2(32, 25, 16, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nsg3b"]
-atlas = ExtResource("10_p2hl7")
+atlas = ExtResource("10_48oyf")
 region = Rect2(0, 50, 16, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gl82v"]
@@ -393,7 +393,7 @@ animations = [{
 }]
 
 [node name="cutscene" type="Node2D"]
-script = ExtResource("1_5pew1")
+script = ExtResource("1_nyde7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -418,7 +418,7 @@ layer_0/tile_data = PackedInt32Array(131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 6
 [node name="empty house" type="Sprite2D" parent="."]
 position = Vector2(77, -5)
 scale = Vector2(1.21875, 1.40625)
-texture = ExtResource("6_4hd5n")
+texture = ExtResource("6_kyaiy")
 
 [node name="ship" type="AnimatedSprite2D" parent="."]
 z_index = -1
@@ -429,13 +429,13 @@ animation = &"idle"
 [node name="back" type="Sprite2D" parent="."]
 z_index = -100
 position = Vector2(0, -2)
-texture = ExtResource("8_sm4ko")
+texture = ExtResource("8_g0cjt")
 
 [node name="empty strelka" type="Sprite2D" parent="."]
 visible = false
 z_index = -1
 position = Vector2(54, 11)
-texture = ExtResource("9_s6d6h")
+texture = ExtResource("9_nrcrt")
 flip_h = true
 
 [node name="alien" type="AnimatedSprite2D" parent="."]
@@ -461,6 +461,6 @@ animation = &"fly"
 [node name="!" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-89, -7)
-texture = ExtResource("11_4m84f")
+texture = ExtResource("11_v3wkm")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

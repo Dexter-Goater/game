@@ -1,0 +1,13 @@
+extends Node
+var selected_map : String
+var map_gravity : int
+
+func set_gravity():
+	match selected_map:
+		"earth":
+			map_gravity = 500
+		"moon":
+			map_gravity = 300
+		"world_3":
+			map_gravity = 150
+	return map_gravity

@@ -28,6 +28,7 @@ theme = SubResource("Theme_ebktg")
 
 [node name="title" type="Label" parent="Control"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -56.0
 offset_top = -45.0
 offset_right = 56.0

@@ -1,16 +1,19 @@
 extends CharacterBody2D
-
-
+const dash_speed = 200
 const SPEED = 100.0
-const JUMP_VELOCITY = -200.0
-
+const JUMP_VELOCITY = -150
+var dashing = false
+var can_dash = true
+@onready var gravity = MapData.set_gravity()
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 var start_position = Vector2(50,80)
 
 func _physics_process(delta):
+	
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -28,12 +31,20 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+	
+	if Input.is_action_just_pressed("dash") and can_dash:
+		dashing = true
+		can_dash = false
+		$dash_timer.start()
+		$dash_cooldown.start()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
+		if dashing:
+			velocity.x = direction * dash_speed
+		else:
+			velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -41,3 +52,18 @@ func _physics_process(delta):
 
 	if position.y > 120 :
 		get_tree().reload_current_scene()
+
+
+func _on_area_2d_body_entered(body):
+	get_tree().reload_current_scene()
+
+
+func _on_dash_timer_timeout():
+	dashing = false
+	
+
+
+func _on_dash_cooldown_timeout():
+	can_dash = true
+	
+	
