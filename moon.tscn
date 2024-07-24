@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://pwtfamr7furr"]
+[gd_scene load_steps=14 format=3 uid="uid://pwtfamr7furr"]
 
 [ext_resource type="Texture2D" uid="uid://dad4e4bifcexa" path="res://tiles.png" id="1_0ij4t"]
 [ext_resource type="PackedScene" uid="uid://c8bxfhkrp87wj" path="res://player.tscn" id="2_8b034"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://b010ufxk85m8t" path="res://oxygen.tscn" id="3_vbgni"]
 [ext_resource type="Texture2D" uid="uid://df008s1cpy1tb" path="res://Moon_background.png" id="4_e2y3l"]
 [ext_resource type="PackedScene" uid="uid://dndbmo3yb0vw3" path="res://enemy.tscn" id="5_2g4c3"]
+[ext_resource type="PackedScene" uid="uid://bis552n6u0hx4" path="res://coin.tscn" id="7_8f57x"]
+[ext_resource type="PackedScene" uid="uid://b7xiecdwgq3q0" path="res://ship.tscn" id="8_5ux5s"]
+[ext_resource type="Script" path="res://ship.gd" id="9_i82w4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dldx0"]
 texture = ExtResource("1_0ij4t")
@@ -63,3 +66,14 @@ z_index = -200
 tile_set = SubResource("TileSet_byshw")
 format = 2
 layer_0/tile_data = PackedInt32Array(-131079, 0, 0, -196603, 0, 0, -196592, 0, 0, -196580, 0, 0, -196572, 0, 0, -196563, 0, 0, -196552, 0, 0, 196654, 0, 0, 196642, 0, 0, 196630, 0, 0, 196619, 0, 0, -524295, 0, 0, -589823, 0, 0, -589822, 0, 0, -589811, 0, 0, -589801, 0, 0, -589790, 0, 0, -589780, 0, 0, -589768, 0, 0, -524307, 0, 0, -131091, 0, 0, 196608, 0, 0, 262144, 0, 0, 327679, 0, 0, 327678, 0, 0, 262141, 0, 0, 262129, 0, 0, 262128, 0, 0, 262125, 0, 0, 262138, 0, 0, 262150, 0, 0, 196617, 0, 0, -851988, 0, 0, -851977, 0, 0, -917501, 0, 0, -917489, 0, 0, -917477, 0, 0, -917465, 0, 0, -917454, 0, 0, -917444, 0, 0, 196665, 0, 0, -196541, 0, 0, -524221, 0, 0, 196676, 0, 0, -917434, 0, 0, 655341, 0, 0, 655355, 0, 0, 655352, 0, 0, 589830, 0, 0, 589842, 0, 0, 589854, 0, 0, 589866, 0, 0, 589878, 0, 0, 589890, 0, 0, 589898, 0, 0)
+
+[node name="coin" parent="." instance=ExtResource("7_8f57x")]
+position = Vector2(-28, -104)
+
+[node name="ship" parent="." instance=ExtResource("8_5ux5s")]
+position = Vector2(912, -13)
+script = ExtResource("9_i82w4")
+
+[connection signal="body_entered" from="coin" to="player" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="coin" to="coin" method="_on_body_entered"]
+[connection signal="body_entered" from="ship" to="ship" method="_on_body_entered"]
