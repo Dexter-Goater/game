@@ -10,5 +10,5 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body.name == "player":
+	if body.name == "Player":
 		get_tree().reload_current_scene()

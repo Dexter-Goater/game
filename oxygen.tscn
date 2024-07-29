@@ -1,8 +1,8 @@
-[gd_scene load_steps=51 format=3 uid="uid://b010ufxk85m8t"]
+[gd_scene load_steps=51 format=3 uid="uid://whq82ojqpehr"]
 
 [ext_resource type="Texture2D" uid="uid://dx63herrwqw7f" path="res://oxygen bar.png" id="1_p7ds1"]
-[ext_resource type="Script" path="res://Timer.gd" id="2_0q1sh"]
-[ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="2_spqjx"]
+[ext_resource type="Script" path="res://scripts/Timer.gd" id="2_0q1sh"]
+[ext_resource type="Script" path="res://scripts/oxygen.gd" id="2_spqjx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1g6pr"]
 atlas = ExtResource("1_p7ds1")
@@ -336,7 +336,7 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="oxygen" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.645, 0.36)
 sprite_frames = SubResource("SpriteFrames_6t17l")
 frame = 45
@@ -348,5 +348,5 @@ script = ExtResource("2_spqjx")
 wait_time = 45.0
 script = ExtResource("2_0q1sh")
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
+[connection signal="animation_finished" from="oxygen" to="oxygen" method="_on_animation_finished"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
