@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1vttfu53vn7t"]
+[gd_scene load_steps=17 format=3 uid="uid://d1vttfu53vn7t"]
 
 [ext_resource type="PackedScene" uid="uid://011vcqwk7xrw" path="res://player.tscn" id="1_1x47m"]
+[ext_resource type="Script" path="res://game.gd" id="1_7gmmy"]
 [ext_resource type="PackedScene" uid="uid://bqvl8h22flgoe" path="res://earth_cam.tscn" id="2_jomkp"]
 [ext_resource type="Texture2D" uid="uid://bt4v0xqtty5ck" path="res://cloud.png" id="6_vpld3"]
 [ext_resource type="FontFile" uid="uid://bxwefrt2enxmh" path="res://font.ttf" id="7_cw20g"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://diipqc1gxw14p" path="res://shop.tscn" id="10_1uefg"]
 [ext_resource type="Texture2D" uid="uid://clk2pxvse8myp" path="res://small bush.png" id="10_wc5f7"]
 [ext_resource type="Script" path="res://scripts/shop.gd" id="12_5rlk5"]
+[ext_resource type="PackedScene" uid="uid://ccivh48p8we6y" path="res://shop_ui.tscn" id="13_nsmo5"]
 
 [sub_resource type="Theme" id="Theme_wdtpa"]
 default_font = ExtResource("7_cw20g")
@@ -34,6 +36,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6ilrg")
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_7gmmy")
 
 [node name="Player" parent="." instance=ExtResource("1_1x47m")]
 z_index = 10
@@ -134,5 +137,9 @@ position = Vector2(901, 105)
 position = Vector2(1013, 96)
 script = ExtResource("12_5rlk5")
 
+[node name="shop_UI" parent="shop" instance=ExtResource("13_nsmo5")]
+position = Vector2(0, -34)
+
 [connection signal="body_entered" from="coin" to="coin" method="_on_body_entered"]
-[connection signal="body_entered" from="shop" to="shop" method="_on_body_entered"]
+[connection signal="body_entered" from="shop" to="." method="_on_shop_body_entered"]
+[connection signal="body_exited" from="shop" to="." method="_on_shop_body_exited"]

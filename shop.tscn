@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://diipqc1gxw14p"]
+[gd_scene load_steps=6 format=3 uid="uid://diipqc1gxw14p"]
 
 [ext_resource type="Texture2D" uid="uid://bll1ias30iayu" path="res://shop_out.png" id="1_8vtwu"]
+[ext_resource type="Script" path="res://shop.gd" id="1_kukmv"]
 [ext_resource type="FontFile" uid="uid://bxwefrt2enxmh" path="res://font.ttf" id="2_n4404"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxabr"]
@@ -10,7 +11,8 @@ size = Vector2(32, 32)
 font = ExtResource("2_n4404")
 font_size = 8
 
-[node name="Area2D" type="Area2D"]
+[node name="shop" type="Area2D"]
+script = ExtResource("1_kukmv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gxabr")
@@ -27,3 +29,5 @@ text = "(WIP)"
 label_settings = SubResource("LabelSettings_rm006")
 
 [node name="shop" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
