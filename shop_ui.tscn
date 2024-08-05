@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccivh48p8we6y"]
+[gd_scene load_steps=18 format=3 uid="uid://ccivh48p8we6y"]
 
 [ext_resource type="Texture2D" uid="uid://gs838o4pfe1u" path="res://shop.png" id="1_815gd"]
 [ext_resource type="Texture2D" uid="uid://dg50pfqwo16rw" path="res://O2_icon.png" id="2_g8rmm"]
+[ext_resource type="Script" path="res://shop_ui.gd" id="2_lcova"]
 [ext_resource type="Texture2D" uid="uid://dek2xhv6y8tus" path="res://gun_icon.png" id="3_te3yi"]
 [ext_resource type="Texture2D" uid="uid://dyanq7uaj550r" path="res://jetpack_icon.png" id="4_40ioq"]
 
@@ -124,6 +125,7 @@ animations = [{
 
 [node name="shop_UI" type="Sprite2D"]
 texture = ExtResource("1_815gd")
+script = ExtResource("2_lcova")
 
 [node name="O2_icon" type="AnimatedSprite2D" parent="."]
 position = Vector2(15, -13)
@@ -139,3 +141,28 @@ animation = &"Lvl_1"
 position = Vector2(-16, -13)
 sprite_frames = SubResource("SpriteFrames_r6lp2")
 animation = &"Lvl_1"
+
+[node name="jetpack_buy" type="Button" parent="."]
+offset_left = -29.0
+offset_top = -23.0
+offset_right = -3.0
+offset_bottom = -3.0
+flat = true
+
+[node name="O2_buy" type="Button" parent="."]
+offset_left = 3.0
+offset_top = -22.0
+offset_right = 29.0
+offset_bottom = -4.0
+flat = true
+
+[node name="gun_buy" type="Button" parent="."]
+offset_left = -29.0
+offset_top = 6.0
+offset_right = -3.0
+offset_bottom = 26.0
+flat = true
+
+[connection signal="pressed" from="jetpack_buy" to="." method="_on_jetpack_buy_pressed"]
+[connection signal="pressed" from="O2_buy" to="." method="_on_o_2_buy_pressed"]
+[connection signal="pressed" from="gun_buy" to="." method="_on_gun_buy_pressed"]

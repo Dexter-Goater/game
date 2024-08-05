@@ -76,12 +76,12 @@ to move "
 [node name="Label2" type="Label" parent="text"]
 z_index = -10
 layout_mode = 0
-offset_left = 242.0
-offset_top = 53.0
-offset_right = 362.0
-offset_bottom = 74.0
+offset_left = 195.0
+offset_top = 54.0
+offset_right = 371.0
+offset_bottom = 75.0
 text = "watch out 
-press w to jump"
+press spacebar to jump"
 
 [node name="Label3" type="Label" parent="text"]
 layout_mode = 0
@@ -89,7 +89,7 @@ offset_left = 492.0
 offset_top = 53.0
 offset_right = 604.0
 offset_bottom = 74.0
-text = "press Spacebar
+text = "press W
 to dash "
 
 [node name="Label4" type="Label" parent="text"]
