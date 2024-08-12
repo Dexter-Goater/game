@@ -7,3 +7,8 @@ func _on_button_pressed():
 func _on_button_2_pressed():
 	get_tree().change_scene_to_file("res://moon.tscn")
 	MapData.selected_map = "moon"
+
+
+func _on_button_3_pressed():
+	get_tree().change_scene_to_file("res://mars.tscn")
+	MapData.selected_map = "mars"

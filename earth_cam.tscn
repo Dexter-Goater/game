@@ -1,24 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqvl8h22flgoe"]
+[gd_scene load_steps=2 format=3 uid="uid://bqvl8h22flgoe"]
 
 [ext_resource type="Script" path="res://scripts/earth_cam.gd" id="1_jnl26"]
-[ext_resource type="Texture2D" uid="uid://bc7gd4ng6ttih" path="res://background.png" id="2_5e87d"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjbdu"]
-size = Vector2(20, 87)
 
 [node name="earth_cam" type="Camera2D"]
 offset = Vector2(0, 80)
 zoom = Vector2(6, 6)
 script = ExtResource("1_jnl26")
-
-[node name="background" type="Sprite2D" parent="."]
-z_index = -100
-position = Vector2(1.99999, 80)
-scale = Vector2(1.29167, 1)
-texture = ExtResource("2_5e87d")
-
-[node name="camera border" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="camera border"]
-position = Vector2(-106, 72)
-shape = SubResource("RectangleShape2D_mjbdu")

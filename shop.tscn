@@ -1,15 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://diipqc1gxw14p"]
+[gd_scene load_steps=4 format=3 uid="uid://diipqc1gxw14p"]
 
 [ext_resource type="Texture2D" uid="uid://bll1ias30iayu" path="res://shop_out.png" id="1_8vtwu"]
 [ext_resource type="Script" path="res://shop.gd" id="1_kukmv"]
-[ext_resource type="FontFile" uid="uid://bxwefrt2enxmh" path="res://font.ttf" id="2_n4404"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxabr"]
 size = Vector2(32, 32)
-
-[sub_resource type="LabelSettings" id="LabelSettings_rm006"]
-font = ExtResource("2_n4404")
-font_size = 8
 
 [node name="shop" type="Area2D"]
 script = ExtResource("1_kukmv")
@@ -19,14 +14,6 @@ shape = SubResource("RectangleShape2D_gxabr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8vtwu")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -19.0
-offset_top = -26.0
-offset_right = 21.0
-offset_bottom = -17.0
-text = "(WIP)"
-label_settings = SubResource("LabelSettings_rm006")
 
 [node name="shop" type="Node2D" parent="."]
 

@@ -81,17 +81,19 @@ curve = SubResource("Curve2D_evs76")
 position = Vector2(-25, -1)
 rotates = false
 
-[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+[node name="enemy" type="Area2D" parent="Path2D/PathFollow2D"]
 position = Vector2(0, -7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/enemy"]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_vg60t")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Area2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/enemy"]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_f0t56")
 autoplay = "default"
 frame_progress = 0.699827
 
-[connection signal="body_entered" from="Path2D/PathFollow2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Path2D/PathFollow2D/enemy" to="." method="_on_enemy_area_entered"]
+[connection signal="area_entered" from="Path2D/PathFollow2D/enemy" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Path2D/PathFollow2D/enemy" to="." method="_on_area_2d_body_entered"]

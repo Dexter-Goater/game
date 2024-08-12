@@ -8,6 +8,6 @@ func set_gravity():
 			map_gravity = 500
 		"moon":
 			map_gravity = 300
-		"world_3":
-			map_gravity = 150
+		"mars":
+			map_gravity = 400
 	return map_gravity

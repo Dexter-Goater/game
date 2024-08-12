@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dajugig3nu65q"]
+[gd_scene load_steps=8 format=3 uid="uid://dajugig3nu65q"]
 
 [ext_resource type="Script" path="res://scripts/level_select.gd" id="1_n16e7"]
 [ext_resource type="Texture2D" uid="uid://bc7gd4ng6ttih" path="res://background.png" id="1_qcbfs"]
 [ext_resource type="Texture2D" uid="uid://d307fuv3ok66t" path="res://earth.png" id="2_gau4e"]
 [ext_resource type="FontFile" uid="uid://bxwefrt2enxmh" path="res://font.ttf" id="4_4rcc1"]
 [ext_resource type="Texture2D" uid="uid://cldwe28gvu2ad" path="res://moon select.png" id="5_vojbm"]
+[ext_resource type="Texture2D" uid="uid://chaquhj46h05c" path="res://mars_select.png" id="6_pkjq8"]
 
 [sub_resource type="Theme" id="Theme_jexiq"]
 default_font = ExtResource("4_4rcc1")
@@ -63,5 +64,23 @@ offset_right = -40.0
 offset_bottom = -20.0
 text = "2"
 
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -51.0
+offset_right = 5.0
+offset_bottom = -25.0
+icon = ExtResource("6_pkjq8")
+flat = true
+
+[node name="level_3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -29.0
+offset_right = -3.0
+offset_bottom = -20.0
+text = "3"
+
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
