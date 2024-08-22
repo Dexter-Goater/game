@@ -10,4 +10,6 @@ func set_gravity():
 			map_gravity = 300
 		"mars":
 			map_gravity = 400
+		"boss":
+			map_gravity = 300
 	return map_gravity

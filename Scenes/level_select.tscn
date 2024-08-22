@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://dajugig3nu65q"]
+
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="1_j7qno"]
+[ext_resource type="Texture2D" uid="uid://bc7gd4ng6ttih" path="res://Art/background.png" id="2_nlutd"]
+[ext_resource type="FontFile" uid="uid://bxwefrt2enxmh" path="res://font.ttf" id="3_qw3gk"]
+[ext_resource type="Texture2D" uid="uid://d307fuv3ok66t" path="res://Art/earth.png" id="4_acflc"]
+[ext_resource type="Texture2D" uid="uid://cldwe28gvu2ad" path="res://Art/moon select.png" id="5_82r3p"]
+[ext_resource type="Texture2D" uid="uid://chaquhj46h05c" path="res://Art/mars_select.png" id="6_vihwc"]
+
+[sub_resource type="Theme" id="Theme_jexiq"]
+default_font = ExtResource("3_qw3gk")
+default_font_size = 8
+
+[node name="level select" type="Node2D"]
+script = ExtResource("1_j7qno")
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(13, 0)
+scale = Vector2(1.29167, 1)
+texture = ExtResource("2_nlutd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_jexiq")
+
+[node name="level_1" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -29.0
+offset_right = -79.0
+offset_bottom = -20.0
+text = "1"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -95.0
+offset_top = -51.0
+offset_right = -69.0
+offset_bottom = -25.0
+icon = ExtResource("4_acflc")
+flat = true
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -58.0
+offset_top = -51.0
+offset_right = -32.0
+offset_bottom = -25.0
+icon = ExtResource("5_82r3p")
+flat = true
+
+[node name="level_2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -29.0
+offset_right = -40.0
+offset_bottom = -20.0
+text = "2"
+
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -51.0
+offset_right = 5.0
+offset_bottom = -25.0
+icon = ExtResource("6_vihwc")
+flat = true
+
+[node name="level_3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -29.0
+offset_right = -3.0
+offset_bottom = -20.0
+text = "3"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]

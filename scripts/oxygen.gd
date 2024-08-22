@@ -15,3 +15,11 @@ func _ready():
 
 func _on_animation_finished():
 	get_tree().reload_current_scene()
+
+
+func _on_oxygen_pickup_body_entered(body):
+	if body.name == "Player":
+		frame = 0
+		$"../../../Oxygen_pickup".queue_free()
+
+

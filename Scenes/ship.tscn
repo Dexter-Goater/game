@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://s7bhnxsilfbp"]
+
+[ext_resource type="Texture2D" uid="uid://vie8802k55ky" path="res://Art/alien ship.png" id="1_dvm8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6eh1"]
+size = Vector2(30, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xuds"]
+atlas = ExtResource("1_dvm8h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxrpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xuds")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ship" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_h6eh1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wxrpf")
